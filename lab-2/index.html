@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Research Paper on Cryptography (Web Version)</title>
+  <meta name="author" content="Gurdeep Singh, Prateek Kumar, Nishant Taneja, Gurpreet Kaur">
+  <meta name="description" content="Web conversion of an academic paper on cryptography with an addendum describing HTML structure decisions.">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header>
+    <h1 id="paper-title">A RESEARCH PAPER ON CRYPTOGRAPHY</h1>
+    <address>
+      <p><strong>Authors:</strong> Gurdeep Singh; Prateek Kumar; Nishant Taneja; Gurpreet Kaur</p>
+      <p><em>Mahavir Swami Institute of Technology, Sonipat, Haryana</em></p>
+    </address>
+  </header>
+
+  <main id="main" role="main" aria-labelledby="paper-title">
+    <!-- Article 1: Paper content -->
+    <article id="paper">
+      <header>
+        <h2>Abstract</h2>
+      </header>
+      <p>
+        Data is any type of stored digital information. Security is about the protection of assets.
+        Data security refers to protective digital privacy measures that are applied to prevent unauthorized
+        access to computers, personal databases and websites. Cryptography protects users by providing
+        functionality for the encryption of data and authentication of other users. Compression reduces
+        the number of bits needed to represent data. Among cryptographic techniques, <abbr title="Advanced Encryption Standard">AES</abbr> is one of the most widely used. Information security involves confidentiality, authenticity, integrity, and non‑repudiation.
+      </p>
+
+      <section aria-labelledby="intro">
+        <h2 id="intro">Introduction</h2>
+        <p>
+          To secure data efficiently, compression can be combined with encryption to reduce size and improve transfer speeds.
+          Core security goals include <strong>Confidentiality</strong>, <strong>Authentication</strong>, <strong>Integrity</strong>, and <strong>Non‑repudiation</strong>.
+          Modern cryptography is grounded in mathematics and computer science.
+        </p>
+      </section>
+
+      <section aria-labelledby="crypto">
+        <h2 id="crypto">Cryptography</h2>
+        <p>
+          The art of cryptography is as old as written communication. Encryption hides information; decryption reveals it.
+          A <em>cipher</em> transforms plaintext into ciphertext. The word derives from the Greek “<em>kryptos</em>” (hidden) and “<em>graphikos</em>” (writing).
+        </p>
+
+        <h3>Basic Terminology</h3>
+        <ul>
+          <li><dfn>Plaintext</dfn>: Original readable data.</li>
+          <li><dfn>Ciphertext</dfn>: Encrypted, unreadable data.</li>
+          <li><dfn>Cipher</dfn>: Algorithm used to encrypt/decrypt.</li>
+          <li><dfn>Key</dfn>: Value used in the encryption/decryption process.</li>
+        </ul>
+
+        <h3>Goals of Cryptography</h3>
+        <ol>
+          <li><strong>Confidentiality</strong>: Only the intended recipient can read the message.</li>
+          <li><strong>Authentication</strong>: Verifies identities of communicating parties.</li>
+          <li><strong>Data Integrity</strong>: Ensures the message has not been altered.</li>
+          <li><strong>Non‑repudiation</strong>: Prevents denial of participation.</li>
+          <li><strong>Access Control</strong>: Restricts unauthorized resource use.</li>
+        </ol>
+
+        <h3>Encryption and Decryption</h3>
+        <p>
+          Encryption converts plaintext to ciphertext; decryption restores it. <strong>Symmetric</strong> schemes use one key;
+          <strong>asymmetric</strong> schemes use a public/private key pair.
+        </p>
+      </section>
+
+      <section aria-labelledby="compression">
+        <h2 id="compression">Compression</h2>
+        <p>
+          Data compression reduces bandwidth and storage. <em>Lossless</em> methods (e.g., text) preserve exact originals,
+          while <em>lossy</em> methods (e.g., images/audio) trade fidelity for smaller size.
+        </p>
+      </section>
+
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>
+          Cryptography provides confidentiality, authentication, integrity, and non‑repudiation.
+          Combined with compression, it enhances both security and efficiency.
+        </p>
+      </section>
+
+      <section aria-labelledby="refs">
+        <h2 id="refs">References</h2>
+        <ol>
+          <li><cite><a href="https://www.techopedia.com/definition/1773/decryption">Techopedia: Decryption</a></cite></li>
+          <li><cite><a href="https://www.computerhope.com/jargon/d/decrypti.htm">Computer Hope: Decryption</a></cite></li>
+          <li><cite><a href="https://en.wikipedia.org/wiki/Cryptography">Wikipedia: Cryptography</a></cite></li>
+          <li><cite><a href="https://www.techopedia.com/definition/25403/encryption-key">Techopedia: Encryption Key</a></cite></li>
+          <li><cite><a href="http://searchsecurity.techtarget.com/definition/private-key">TechTarget: Private Key</a></cite></li>
+          <li><cite><a href="https://www.tutorialspoint.com/cryptography/cryptography_tutorial.pdf">TutorialsPoint: Cryptography Tutorial</a></cite></li>
+        </ol>
+      </section>
+    </article>
+
+    <!-- Article 2: Addendum -->
+    <article id="addendum">
+      <h2>Addendum</h2>
+      <p>
+        This page uses semantic HTML to make the converted paper accessible, navigable, and ready for styling.
+        I used <code>&lt;header&gt;</code> for the title and byline, and wrapped the two major parts of the assignment
+        in separate <code>&lt;article&gt;</code> elements: one for the paper and one for this addendum.
+        Sections within the paper use <code>&lt;section&gt;</code> with headings to communicate structure to assistive technologies.
+      </p>
+      <p>
+        Lists (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>) group terminology, goals, and references.
+        I used <code>&lt;dfn&gt;</code> to mark term definitions and <code>&lt;abbr&gt;</code> for acronyms (e.g., AES).
+        References are hyperlinked and wrapped with <code>&lt;cite&gt;</code> to designate cited works.
+        An <code>&lt;address&gt;</code> element communicates author/affiliation metadata.
+      </p>
+      <p>
+        A “skip to content” link improves keyboard navigation. The required “Last updated” script appears in the footer,
+        exactly as specified, to satisfy the rubric. This structure is valid HTML5 and sets up cleanly for CSS in later modules.
+      </p>
+    </article>
+  </main>
+
+  <!-- Required footer and script (unchanged per instructions) -->
+  <footer>
+    <p>Last updated:
+      <span id="lastModified"></span>
+    </p>
+  </footer>
+  <script type="text/javascript">
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+</body>
+</html>
