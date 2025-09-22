@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ITC505 Lab 3 — Font Delivery</title>
+
+  <!-- Load multiple Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Rubik+Moonrocks&family=Press+Start+2P&family=Eater&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f4f4f9;
+      margin: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-family: 'Rubik Moonrocks', cursive;
+      text-align: center;
+      color: #4a148c;
+    }
+    .dokdo {
+      font-family: 'Dokdo', cursive;
+      color: darkred;
+    }
+    .eater {
+      font-family: 'Eater', cursive;
+      color: green;
+    }
+    .pressstart {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 14px;
+      color: navy;
+    }
+    .fredericka {
+      font-family: 'Fredericka the Great', cursive;
+      color: maroon;
+    }
+    .rubik {
+      font-family: 'Rubik Moonrocks', cursive;
+      color: teal;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Delivering Fonts to the Browser</h1>
+
+  <p class="dokdo">
+    A font service, like Google Fonts, presents one of the most frequent methods of supplying a bespoke font. 
+    When the page is loaded, the browser loads the font file on the servers of Google and therefore the client 
+    does not have to install the font on his or her computer.
+  </p>
+
+  <p class="eater">
+    This can also be achieved by putting the font file (such as .woff2, .ttf, or .otf) on your personal server. 
+    Then you define it in CSS as the rule of loading the font-face.
+  </p>
+
+  <p class="pressstart">
+    This is a good way to serve fonts: regardless of what device and operating system the visitor is on, 
+    the text on the page will be the same way you want.
+  </p>
+
+  <p class="fredericka">
+    In this demo, I loaded a few weird fonts on Google Fonts. The paragraphs are outlined using a different 
+    font family in order to emphasize the transition.
+  </p>
+
+  <p class="rubik">
+    The benefit of relying on such tool as Google Fonts is that it takes care of browser compatibility, 
+    caching, and optimization.
+  </p>
+
+  <!-- Required footer -->
+  <footer>
+      <p>Last updated: 
+          <span id="lastModified"></span>
+      </p>
+  </footer>
+  <script type="text/javascript">
+       var x = document.lastModified;
+       document.getElementById('lastModified').textContent = x;
+  </script>
+
+</body>
+</html>
