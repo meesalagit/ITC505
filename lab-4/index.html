@@ -120,6 +120,21 @@
         <li><strong>Spacing:</strong> 1.7 line-height for long text readability and consistent rhythm.</li>
         <li><strong>Layout:</strong> Single column with centered content for desktop focus as per rubric requirement.</li>
       </ul>
+      <h3>HTML abuse</h3>
+<p>
+  I ensured the title is a true <code>&lt;h1&gt;</code>, section titles are <code>&lt;h2&gt;</code>, and subtopics use <code>&lt;h3&gt;</code>. 
+  I avoided presentational HTML (no inline styles or <code>&lt;br&gt;</code> for spacing) and kept semantic tags like 
+  <code>&lt;address&gt;</code>, <code>&lt;abbr&gt;</code>, and <code>&lt;dfn&gt;</code>.
+</p>
+
+<h3>Exact sizes & spacing</h3>
+<p>
+  Base text is <strong>18px</strong> with ~<strong>1.7</strong> line height. 
+  Headings use fluid sizes: <code>h2</code> = <code>clamp(1.35rem, 2.2vw, 1.7rem)</code>, 
+  <code>h3</code> = <code>clamp(1.1rem, 1.8vw, 1.3rem)</code>. 
+  Content width is ~<strong>72ch</strong> with a vertical rhythm of ~<strong>1.25rem</strong> between sections.
+</p>
+
     </article>
   </main>
   <footer class="site-footer"><p>Last updated: <span id="lastModified"></span></p></footer>
