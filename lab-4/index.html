@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Research Paper on Cryptography (Web Version)</title>
+  <meta name="author" content="Gurdeep Singh, Prateek Kumar, Nishant Taneja, Gurpreet Kaur" />
+  <meta name="description" content="Styled academic webpage on cryptography with addendum for Lab 4." />
+
+  <style>
+  :root {
+    --bg: #f9fafc;
+    --fg: #1f2329;
+    --muted: #5a6475;
+    --accent: #3b6df0;
+    --accent-light: #dee7ff;
+    --border: #e1e5ee;
+    --callout: #eef3ff;
+    --radius: 14px;
+    --container: 72ch;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --rhythm: 1.25rem;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    color:var(--fg);
+    background:var(--bg);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:18px;
+    line-height:1.7;
+  }
+  .container{max-width:var(--container);margin-inline:auto;padding:1.5rem clamp(1rem,3vw,2rem);}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--accent);color:white;padding:0.7rem 1rem;border-radius:8px;}
+  .skip-link:focus{left:1rem;top:1rem;z-index:1000;outline:3px solid white;}
+  .site-header{
+    background:linear-gradient(120deg,#3b6df0 0%,#648dff 100%);
+    color:white;padding:2.5rem 1.5rem;text-align:center;box-shadow:var(--shadow);
+  }
+  .site-header h1{font-size:clamp(1.7rem,3vw,2.3rem);margin:0 0 0.6rem;letter-spacing:0.02em;}
+  .byline{color:#e9ebf8;font-style:normal;margin:0;}
+  h2{font-size:clamp(1.35rem,2.2vw,1.7rem);margin-top:2rem;color:var(--accent);border-bottom:2px solid var(--accent-light);padding-bottom:0.25rem;}
+  h3{font-size:clamp(1.1rem,1.8vw,1.3rem);color:#2a2f36;margin-top:1.2rem;}
+  p{margin:0 0 var(--rhythm);}
+  strong{color:var(--accent);}
+  a{color:var(--accent);text-decoration:none;transition:color 0.25s ease,text-shadow 0.25s ease;}
+  a:hover{color:#224ed4;text-shadow:0 0 6px var(--accent-light);}
+  article.paper,article.addendum{
+    background:white;border-radius:var(--radius);padding:clamp(1rem,2.5vw,1.6rem);
+    box-shadow:var(--shadow);margin-bottom:2rem;
+  }
+  section{margin-bottom:1.5rem;}
+  ul,ol{margin-left:1.25rem;margin-bottom:var(--rhythm);}
+  li+li{margin-top:0.35rem;}
+  blockquote{margin:1.5rem 0;padding:0.75rem 1rem;border-left:4px solid var(--accent);background:var(--accent-light);border-radius:6px;font-style:italic;}
+  code{background:var(--accent-light);color:#28396b;border-radius:6px;padding:0.1rem 0.4rem;font-size:0.95em;}
+  .addendum{background:var(--callout);}
+  .addendum h2{border-color:var(--accent);}
+  .addendum ul li{background:white;padding:0.3rem 0.6rem;border-radius:8px;margin-bottom:0.3rem;border-left:3px solid var(--accent);}
+  table{border-collapse:collapse;width:100%;margin-bottom:1.5rem;}
+  th,td{border:1px solid var(--border);padding:0.6rem 1rem;text-align:left;}
+  th{background:var(--accent-light);color:#1c1f25;}
+  .site-footer{background:#222;color:#ddd;text-align:center;padding:1.2rem 1rem;margin-top:2rem;font-size:0.95rem;box-shadow:inset 0 1px 6px rgba(255,255,255,0.1);}
+  @media (max-width:768px){body{font-size:16px;}h1{font-size:1.6rem;}.container{padding:1rem;}}
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <h1 id="paper-title">A RESEARCH PAPER ON CRYPTOGRAPHY</h1>
+    <address class="byline">
+      <p><strong>Authors:</strong> Gurdeep Singh; Prateek Kumar; Nishant Taneja; Gurpreet Kaur</p>
+      <p><em>Mahavir Swami Institute of Technology, Sonipat, Haryana</em></p>
+    </address>
+  </header>
+  <main id="main" role="main" aria-labelledby="paper-title" class="container">
+    <article id="paper" class="paper">
+      <header><h2>Abstract</h2></header>
+      <p>Data is any type of stored digital information. Security is about the protection of assets. Cryptography protects users by encrypting data and authenticating communication. Compression reduces data size. Among cryptographic techniques, <abbr title="Advanced Encryption Standard">AES</abbr> is one of the most widely used.</p>
+      <section aria-labelledby="intro">
+        <h2 id="intro">Introduction</h2>
+        <p>To secure data efficiently, compression can be combined with encryption to reduce size and improve transfer speeds. Core security goals include <strong>Confidentiality</strong>, <strong>Authentication</strong>, <strong>Integrity</strong>, and <strong>Non-repudiation</strong>.</p>
+      </section>
+      <section aria-labelledby="crypto">
+        <h2 id="crypto">Cryptography</h2>
+        <p>The art of cryptography is as old as written communication. Encryption hides information; decryption reveals it. A <em>cipher</em> transforms plaintext into ciphertext. The word derives from the Greek “<em>kryptos</em>” (hidden) and “<em>graphikos</em>” (writing).</p>
+        <h3>Basic Terminology</h3>
+        <ul>
+          <li><dfn>Plaintext</dfn>: Original readable data.</li>
+          <li><dfn>Ciphertext</dfn>: Encrypted, unreadable data.</li>
+          <li><dfn>Cipher</dfn>: Algorithm used to encrypt/decrypt.</li>
+          <li><dfn>Key</dfn>: Value used in the encryption/decryption process.</li>
+        </ul>
+        <blockquote>"Without cryptography, privacy in the digital world would be impossible." — Anonymous</blockquote>
+      </section>
+      <section aria-labelledby="compression">
+        <h2 id="compression">Compression</h2>
+        <p>Data compression reduces bandwidth and storage. <em>Lossless</em> methods preserve exact originals, while <em>lossy</em> methods trade fidelity for smaller size.</p>
+      </section>
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>Cryptography ensures secure communication through confidentiality and authentication. Combined with compression, it enhances both efficiency and protection.</p>
+      </section>
+      <section aria-labelledby="refs">
+        <h2 id="refs">References</h2>
+        <ol>
+          <li><cite><a href="https://www.techopedia.com/definition/1773/decryption">Techopedia: Decryption</a></cite></li>
+          <li><cite><a href="https://en.wikipedia.org/wiki/Cryptography">Wikipedia: Cryptography</a></cite></li>
+          <li><cite><a href="https://www.tutorialspoint.com/cryptography/cryptography_tutorial.pdf">TutorialsPoint: Cryptography Tutorial</a></cite></li>
+        </ol>
+      </section>
+    </article>
+    <article id="addendum" class="addendum">
+      <h2>Addendum: Design Rationale for Lab 4</h2>
+      <p>This design emphasizes readability and accessibility through consistent typography, clear hierarchy, and balanced spacing. Gradient accents and drop shadows give a modern touch while maintaining academic tone.</p>
+      <ul>
+        <li><strong>Font Choice:</strong> “Inter” for clarity and system fallbacks for universality.</li>
+        <li><strong>Colors:</strong> Blue accent (#3b6df0) for trust and academic tone, neutral backgrounds for comfort.</li>
+        <li><strong>Spacing:</strong> 1.7 line-height for long text readability and consistent rhythm.</li>
+        <li><strong>Layout:</strong> Single column with centered content for desktop focus as per rubric requirement.</li>
+      </ul>
+    </article>
+  </main>
+  <footer class="site-footer"><p>Last updated: <span id="lastModified"></span></p></footer>
+  <script>var x=document.lastModified;document.getElementById("lastModified").textContent=x;</script>
+</body>
+</html>
