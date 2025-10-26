@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITC505 Lab 6 - Holy Grail Layout + Bubble Sort Tool</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="layout">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>ITC505 Lab 6</h1>
+            <p class="tagline">CSS Grid • JavaScript • Last Modified Footer</p>
+        </header>
+
+        <!-- SIDEBAR / MENU -->
+        <nav class="sidebar">
+            <h2>Navigation</h2>
+            <ul class="nav-list">
+                <li><a href="/index.html">🏠 Home</a></li>
+                <li><a href="/itc505/lab-4/index.html">Lab 4</a></li>
+                <li><a href="/itc505/lab-5/index.html">Lab 5</a></li>
+                <li><a class="active" href="/itc505/lab-6/index.html">Lab 6</a></li>
+                <li><a href="#">Project Status</a></li>
+                <li><a href="#">Contact / About</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main">
+            <section class="tool-card">
+                <h2>Bubble Sort Visualizer</h2>
+                <p>Enter a list of numbers separated by commas. Example: <code>9,4,12,1,8</code></p>
+
+                <label for="numberInput" class="input-label">Numbers:</label>
+                <input id="numberInput" class="text-input" type="text" placeholder="10,5,3,9,1" />
+
+                <div class="button-row">
+                    <button id="sortBtn" class="btn primary">Sort Numbers</button>
+                    <button id="randomBtn" class="btn">Random Demo</button>
+                </div>
+
+                <div class="results">
+                    <div class="result-block">
+                        <h3>Original Array</h3>
+                        <p id="originalOutput" class="output-box">[ ]</p>
+                    </div>
+                    <div class="result-block">
+                        <h3>Sorted Array</h3>
+                        <p id="sortedOutput" class="output-box">[ ]</p>
+                    </div>
+                    <div class="result-block">
+                        <h3>Stats</h3>
+                        <p id="statsOutput" class="output-box">No swaps yet.</p>
+                    </div>
+                </div>
+
+                <details class="details-area">
+                    <summary>Show Bubble Sort Steps</summary>
+                    <pre id="stepsOutput" class="steps-box">
+// steps will appear here after you click "Sort Numbers"
+                    </pre>
+                </details>
+
+            </section>
+        </main>
+
+        <!-- ASIDE / AD -->
+        <aside class="ad">
+            <h2>Ad / Sponsored</h2>
+            <a href="https://www.amazon.com/s?k=water+bottle" target="_blank" class="ad-link" rel="noopener noreferrer">
+                <img src="https://m.media-amazon.com/images/I/61S7BrCBnbL._AC_SL1500_.jpg" 
+                     alt="Reusable insulated water bottle"
+                     class="ad-img" />
+                <p class="ad-caption">Stay hydrated 💧 (Amazon)</p>
+            </a>
+        </aside>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <section class="addendum">
+                <h2>Lab 6 Addendum</h2>
+                <p>
+                    In this lab I implemented a classic “Holy Grail” web layout using CSS Grid. 
+                    The layout has five regions: header, navigation sidebar, main content, an advertisement 
+                    sidebar, and a footer. The grid template defines columns for nav, content, and ad, and 
+                    keeps header/footer spanning full width.
+                </p>
+                <p>
+                    For the JavaScript portion, I built an interactive Bubble Sort tool. The user types a list
+                    of comma-separated numbers and clicks “Sort Numbers.” The script (in an external
+                    <code>script.js</code> file) parses the input into an array, then runs a Bubble Sort loop.
+                    It records each comparison/swap step, counts total swaps, and displays:
+                    (1) the original array,
+                    (2) the sorted array,
+                    (3) stats about how many swaps happened,
+                    (4) an optional step-by-step trace.
+                    This satisfies the requirement that the page responds to an event (button click).
+                </p>
+                <p>
+                    Challenges: Getting clean user input was tricky. Users might type spaces or double commas, 
+                    which can produce <code>NaN</code>. I solved this by trimming each value and ignoring blanks 
+                    before converting to <code>Number</code>. Another challenge was keeping JavaScript in a 
+                    separate file while still updating elements in the DOM. I handled that by giving key 
+                    elements unique <code>id</code> attributes (like <code>sortedOutput</code>) and using 
+                    <code>document.getElementById(...)</code> in <code>script.js</code>.
+                </p>
+            </section>
+
+            <section class="last-updated">
+                <p>Last updated:
+                    <span id="lastModified"></span>
+                </p>
+            </section>
+        </footer>
+
+    </div> <!-- end .layout -->
+
+    <!-- required lastModified script -->
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+
+    <!-- external JS -->
+    <script src="script.js"></script>
+</body>
+</html>
