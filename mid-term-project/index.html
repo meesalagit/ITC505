@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mid-Term Project — The Lost Kingdom (CYOA)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="title-wrap">
+      <h1>🛡️ The Lost Kingdom: A Fantasy Adventure</h1>
+      <p class="subtitle">Interactive story with 8 endings — HTML, CSS, JavaScript</p>
+    </div>
+    <nav class="actions">
+      <button id="btn-start" class="btn primary">Start / Restart</button>
+      <button id="btn-random" class="btn">Random Choice</button>
+      <button id="btn-history" class="btn">Toggle History</button>
+      <a class="btn ghost" href="addendum.md" download>Download Addendum</a>
+      <a class="btn ghost" href="script.js" download>script.js</a>
+      <a class="btn ghost" href="style.css" download>style.css</a>
+      <a class="btn ghost" href="index.html" download>index.html</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar left">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Apply HTML, CSS, JavaScript</li>
+        <li>Event listeners + DOM</li>
+        <li>Debugging & problem-solving</li>
+        <li>Interactive UI with 8+ endings</li>
+      </ul>
+      <details open>
+        <summary>How to play</summary>
+        <p>Read the scene and pick a choice. Choices lead to different endings (at least eight!). Use <strong>Start / Restart</strong> to begin again.</p>
+      </details>
+      <details>
+        <summary>Keyboard</summary>
+        <p>Use <kbd>1..9</kbd> to pick a choice. Press <kbd>R</kbd> to restart.</p>
+      </details>
+    </aside>
+
+    <section class="story">
+      <div id="image" class="story-image" role="img" aria-label="scene image"></div>
+      <div id="text" class="story-text"></div>
+      <div id="choices" class="choices" aria-live="polite"></div>
+    </section>
+
+    <aside class="sidebar right">
+      <h2>Progress</h2>
+      <ol id="history" class="history"></ol>
+      <div class="badges">
+        <span class="badge" id="badge-endings">Endings found: <strong>0</strong>/8</span>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Last updated: 
+      <span id="lastModified"></span>
+    </p>
+  </footer>
+  <script type="text/javascript">
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
