@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7 – Mad Lib</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4b4b70;
+            color: #000;
+        }
+        .wrapper {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #d9d9e8;
+            padding: 2rem 3rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+        .form-table {
+            margin: 1.5rem auto;
+            width: 100%;
+            max-width: 500px;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+        .form-row label {
+            width: 180px;
+            font-weight: bold;
+        }
+        .form-row input[type="text"] {
+            flex: 1;
+            padding: 0.25rem;
+        }
+        .submit-row {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        button {
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Lab 7: Mad Lib</h1>
+        <h2>A Wild Story Mad Lib</h2>
+        <p style="text-align:center;">
+            Enter words for each prompt below and click <strong>Go Mad!</strong> to see your story.
+        </p>
+
+        <form action="/ITC505/lab-7/index.html" method="POST">
+            <div class="form-table">
+                <div class="form-row">
+                    <label for="animal">ANIMAL</label>
+                    <input type="text" id="animal" name="animal">
+                </div>
+                <div class="form-row">
+                    <label for="noun1">NOUN</label>
+                    <input type="text" id="noun1" name="noun1">
+                </div>
+                <div class="form-row">
+                    <label for="place">PLACE</label>
+                    <input type="text" id="place" name="place">
+                </div>
+                <div class="form-row">
+                    <label for="pluralNoun">NOUN (PLURAL)</label>
+                    <input type="text" id="pluralNoun" name="pluralNoun">
+                </div>
+                <div class="form-row">
+                    <label for="adjective1">ADJECTIVE</label>
+                    <input type="text" id="adjective1" name="adjective1">
+                </div>
+                <div class="form-row">
+                    <label for="bodyPart">BODY PART</label>
+                    <input type="text" id="bodyPart" name="bodyPart">
+                </div>
+                <div class="form-row">
+                    <label for="noun2">NOUN</label>
+                    <input type="text" id="noun2" name="noun2">
+                </div>
+                <div class="form-row">
+                    <label for="noun3">NOUN</label>
+                    <input type="text" id="noun3" name="noun3">
+                </div>
+                <div class="form-row">
+                    <label for="verbEd1">VERB ENDING IN "ED"</label>
+                    <input type="text" id="verbEd1" name="verbEd1">
+                </div>
+                <div class="form-row">
+                    <label for="adjective2">ADJECTIVE</label>
+                    <input type="text" id="adjective2" name="adjective2">
+                </div>
+                <div class="form-row">
+                    <label for="noun4">NOUN</label>
+                    <input type="text" id="noun4" name="noun4">
+                </div>
+                <div class="form-row">
+                    <label for="verbEd2">VERB ENDING IN "ED"</label>
+                    <input type="text" id="verbEd2" name="verbEd2">
+                </div>
+                <div class="form-row">
+                    <label for="adverb">ADVERB</label>
+                    <input type="text" id="adverb" name="adverb">
+                </div>
+            </div>
+
+            <div class="submit-row">
+                <button type="submit">Go Mad!</button>
+            </div>
+        </form>
+
+        <footer>
+            <p>Last updated: 
+                <span id="lastModified"></span>
+            </p>
+        </footer>
+        <script type="text/javascript">
+             var x = document.lastModified;
+             document.getElementById('lastModified').textContent = x;
+        </script>
+    </div>
+</body>
+</html>
