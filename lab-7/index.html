@@ -11,7 +11,7 @@
     <header class="site-header">
       <h1>Mad Libs</h1>
       <h2>A Custom Story Ad-Lib</h2>
-      <p style="text-align:center;font-size:0.8rem;margin-top:4px;">Lab 7 v3</p>
+      <p style="text-align:center;font-size:0.8rem;margin-top:4px;">Lab 7 v3 + Addendum</p>
     </header>
 
     <main>
@@ -89,28 +89,25 @@
       </section>
     </main>
 
+    <!-- FOOTER WITH ADDENDUM -->
     <footer>
-  <p><strong>Lab 7 Addendum:</strong></p>
-  <p style="max-width:800px;margin:0 auto;text-align:justify;font-size:0.9rem;line-height:1.5;">
-    This lab implements a Mad Lib web application using HTML, CSS, and JavaScript. The user fills in text fields 
-    (nouns, adjectives, verbs, etc.) and generates a unique story displayed dynamically on the same page without 
-    any backend submission. The styling is inspired by classic Mad Lib designs, featuring a centered card layout, 
-    purple background, and interactive validation. Input fields are validated before the story appears, and 
-    missing fields are highlighted with a red border. The project also includes an ExpressJS server version for 
-    local or cloud hosting, while this GitHub Pages version runs fully client-side to prevent 405 errors. 
-    This demonstrates client-side interactivity and creative use of JavaScript for dynamic content rendering.
-  </p>
+      <p><strong>Lab 7 Addendum</strong></p>
+      <p style="max-width:800px;margin:0 auto;text-align:justify;font-size:0.9rem;line-height:1.5;">
+        This lab implements a Mad Lib web application using HTML, CSS, and JavaScript. Users provide different
+        word types (nouns, adjectives, verbs, etc.) and the page dynamically generates a short story on the same
+        page using their input. The layout and styling are inspired by classic Mad Lib sites: a centered card,
+        purple background, and simple table-based form. JavaScript performs client-side validation, highlights
+        missing fields, and constructs the story using template literals. The generated story appears below the
+        form without reloading the page, which is important because this version is hosted on GitHub Pages and
+        cannot use POST requests or a Node/Express back-end. A separate ExpressJS server file can be used on a
+        real server to handle the same Mad Lib logic on the back-end. This project demonstrates front-end
+        interactivity, basic form handling, and dynamic content rendering in the browser.
+      </p>
 
-  <p style="margin-top:1rem;">Last updated: 
-    <span id="lastModified"></span>
-  </p>
-</footer>
-
-<script>
-  var x = document.lastModified;
-  document.getElementById('lastModified').textContent = x;
-</script>
-
+      <p style="margin-top:1rem;">Last updated:
+        <span id="lastModified"></span>
+      </p>
+    </footer>
   </div>
 
   <script>
@@ -158,7 +155,7 @@ The ${noun3} nearby started to glow ${adjective2}, and a mysterious ${noun4}
 ${verbEd2} ${adverb} into the darkness. It was a night nobody would ever forget!
       `;
 
-      storyBox.innerHTML = story.trim().replace(/\\n/g, '<br>');
+      storyBox.innerHTML = story.trim().replace(/\n/g, '<br>');
       resultSection.style.display = 'block';
       resultSection.scrollIntoView({ behavior: 'smooth' });
     });
