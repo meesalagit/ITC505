@@ -18,8 +18,8 @@
       <section class="madlib-card">
         <h3 class="madlib-title">A Fun Story Ad-Lib</h3>
 
-        <!-- action value kept for assignment, but JS will prevent actual submit -->
-        <form id="madLibForm" action="/ITC505/lab-7" method="POST">
+        <!-- NO action/method -> JS handles everything on same page -->
+        <form id="madLibForm">
           <table class="madlib-table">
             <tr>
               <td class="label-cell"><label for="animal">ANIMAL</label></td>
@@ -101,13 +101,12 @@
     const storyBox = document.getElementById('storyBox');
 
     form.addEventListener('submit', function (e) {
-      // Stop actual form submit (keep everything on same page)
+      // Stay on same page
       e.preventDefault();
 
       const inputs = form.querySelectorAll('input[type="text"]');
       let valid = true;
 
-      // Simple validation + red border on empty
       inputs.forEach(input => {
         if (!input.value.trim()) {
           valid = false;
@@ -122,7 +121,6 @@
         return;
       }
 
-      // Grab values
       const animal      = document.getElementById('animal').value.trim();
       const noun1       = document.getElementById('noun1').value.trim();
       const place       = document.getElementById('place').value.trim();
@@ -137,7 +135,6 @@
       const verbEd2     = document.getElementById('verbEd2').value.trim();
       const adverb      = document.getElementById('adverb').value.trim();
 
-      // Build story
       let story = `
 One night, a ${animal} and a ${noun1} were walking through ${place}.
 Suddenly, a group of ${pluralNoun} appeared, looking very ${adjective1}.
@@ -146,13 +143,11 @@ The ${noun3} nearby started to glow ${adjective2}, and a mysterious ${noun4}
 ${verbEd2} ${adverb} into the darkness. It was a night nobody would ever forget!
       `;
 
-      // Show story on same page
-      storyBox.innerHTML = story.trim().replace(/\n/g, '<br>');
+      storyBox.innerHTML = story.trim().replace(/\\n/g, '<br>');
       resultSection.style.display = 'block';
       resultSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // "Last updated" footer
     var x = document.lastModified;
     document.getElementById('lastModified').textContent = x;
   </script>
