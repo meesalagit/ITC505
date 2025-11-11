@@ -1,0 +1,120 @@
+/* Background like classic mad-libs page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  background-color: #5c5979;  /* purple/gray */
+  color: #222;
+}
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  color: #f5f5f5;
+  margin-bottom: 10px;
+}
+
+.site-header h1 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.site-header h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+/* Card that looks like the form panel */
+.madlib-card {
+  background-color: #d6d6dd;
+  border: 2px solid #999;
+  width: 520px;
+  margin: 0 auto 18px;
+  padding: 22px 26px 26px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.madlib-title {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+/* Table layout */
+.madlib-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.madlib-table td {
+  padding: 3px 0;
+}
+
+.label-cell {
+  width: 45%;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.madlib-table input[type="text"] {
+  width: 100%;
+  padding: 3px 4px;
+  font-size: 0.9rem;
+  border: 1px solid #777;
+  border-radius: 2px;
+}
+
+/* Highlight invalid */
+.madlib-table input[type="text"].error {
+  border-color: #c02828;
+  background-color: #ffecec;
+}
+
+/* Button */
+.button-row {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.go-button {
+  padding: 6px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #333;
+  background-color: #3366cc;
+  color: #fff;
+  cursor: pointer;
+}
+
+.go-button:hover {
+  background-color: #254b99;
+}
+
+/* Story result box */
+.result-card .story-box {
+  background: #f9f9f9;
+  border: 1px solid #aaa;
+  padding: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #eee;
+}
