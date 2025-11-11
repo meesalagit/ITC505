@@ -90,10 +90,27 @@
     </main>
 
     <footer>
-      <p>Last updated:
-        <span id="lastModified"></span>
-      </p>
-    </footer>
+  <p><strong>Lab 7 Addendum:</strong></p>
+  <p style="max-width:800px;margin:0 auto;text-align:justify;font-size:0.9rem;line-height:1.5;">
+    This lab implements a Mad Lib web application using HTML, CSS, and JavaScript. The user fills in text fields 
+    (nouns, adjectives, verbs, etc.) and generates a unique story displayed dynamically on the same page without 
+    any backend submission. The styling is inspired by classic Mad Lib designs, featuring a centered card layout, 
+    purple background, and interactive validation. Input fields are validated before the story appears, and 
+    missing fields are highlighted with a red border. The project also includes an ExpressJS server version for 
+    local or cloud hosting, while this GitHub Pages version runs fully client-side to prevent 405 errors. 
+    This demonstrates client-side interactivity and creative use of JavaScript for dynamic content rendering.
+  </p>
+
+  <p style="margin-top:1rem;">Last updated: 
+    <span id="lastModified"></span>
+  </p>
+</footer>
+
+<script>
+  var x = document.lastModified;
+  document.getElementById('lastModified').textContent = x;
+</script>
+
   </div>
 
   <script>
