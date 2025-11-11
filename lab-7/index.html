@@ -11,78 +11,78 @@
     <header class="site-header">
       <h1>Mad Libs</h1>
       <h2>A Custom Story Ad-Lib</h2>
+      <p style="text-align:center;font-size:0.8rem;margin-top:4px;">Lab 7 v3</p>
     </header>
 
     <main>
-      <!-- FORM CARD -->
+      <!-- INPUT CARD (NO FORM TAG) -->
       <section class="madlib-card">
         <h3 class="madlib-title">A Fun Story Ad-Lib</h3>
 
-        <!-- NOTE: no action, no method, no submit -->
-        <form id="madLibForm">
+        <div id="madLibFields">
           <table class="madlib-table">
             <tr>
               <td class="label-cell"><label for="animal">ANIMAL</label></td>
-              <td><input type="text" id="animal" name="animal" required></td>
+              <td><input type="text" id="animal" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="noun1">NOUN</label></td>
-              <td><input type="text" id="noun1" name="noun1" required></td>
+              <td><input type="text" id="noun1" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="place">PLACE</label></td>
-              <td><input type="text" id="place" name="place" required></td>
+              <td><input type="text" id="place" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="pluralNoun">NOUN (PLURAL)</label></td>
-              <td><input type="text" id="pluralNoun" name="pluralNoun" required></td>
+              <td><input type="text" id="pluralNoun" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="adjective1">ADJECTIVE</label></td>
-              <td><input type="text" id="adjective1" name="adjective1" required></td>
+              <td><input type="text" id="adjective1" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="bodyPart">BODY PART</label></td>
-              <td><input type="text" id="bodyPart" name="bodyPart" required></td>
+              <td><input type="text" id="bodyPart" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="noun2">NOUN</label></td>
-              <td><input type="text" id="noun2" name="noun2" required></td>
+              <td><input type="text" id="noun2" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="noun3">NOUN</label></td>
-              <td><input type="text" id="noun3" name="noun3" required></td>
+              <td><input type="text" id="noun3" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="verbEd1">VERB ENDING IN "ED"</label></td>
-              <td><input type="text" id="verbEd1" name="verbEd1" required></td>
+              <td><input type="text" id="verbEd1" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="adjective2">ADJECTIVE</label></td>
-              <td><input type="text" id="adjective2" name="adjective2" required></td>
+              <td><input type="text" id="adjective2" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="noun4">NOUN</label></td>
-              <td><input type="text" id="noun4" name="noun4" required></td>
+              <td><input type="text" id="noun4" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="verbEd2">VERB ENDING IN "ED"</label></td>
-              <td><input type="text" id="verbEd2" name="verbEd2" required></td>
+              <td><input type="text" id="verbEd2" required></td>
             </tr>
             <tr>
               <td class="label-cell"><label for="adverb">ADVERB</label></td>
-              <td><input type="text" id="adverb" name="adverb" required></td>
+              <td><input type="text" id="adverb" required></td>
             </tr>
           </table>
 
           <div class="button-row">
-            <!-- type="button" so it NEVER submits the form -->
+            <!-- JUST A BUTTON, NOT A SUBMIT -->
             <button type="button" id="goButton" class="go-button">Go Mad!</button>
           </div>
-        </form>
+        </div>
       </section>
 
-      <!-- RESULT CARD (hidden until user clicks Go Mad) -->
+      <!-- RESULT CARD -->
       <section id="resultSection" class="madlib-card result-card" style="display: none;">
         <h3 class="madlib-title">Your Story</h3>
         <div id="storyBox" class="story-box"></div>
@@ -97,16 +97,14 @@
   </div>
 
   <script>
-    const form = document.getElementById('madLibForm');
     const goButton = document.getElementById('goButton');
     const resultSection = document.getElementById('resultSection');
     const storyBox = document.getElementById('storyBox');
 
     goButton.addEventListener('click', function () {
-      const inputs = form.querySelectorAll('input[type="text"]');
+      const inputs = document.querySelectorAll('#madLibFields input[type="text"]');
       let valid = true;
 
-      // validation
       inputs.forEach(input => {
         if (!input.value.trim()) {
           valid = false;
@@ -121,7 +119,6 @@
         return;
       }
 
-      // Get values
       const animal      = document.getElementById('animal').value.trim();
       const noun1       = document.getElementById('noun1').value.trim();
       const place       = document.getElementById('place').value.trim();
@@ -136,7 +133,6 @@
       const verbEd2     = document.getElementById('verbEd2').value.trim();
       const adverb      = document.getElementById('adverb').value.trim();
 
-      // Build story
       let story = `
 One night, a ${animal} and a ${noun1} were walking through ${place}.
 Suddenly, a group of ${pluralNoun} appeared, looking very ${adjective1}.
@@ -150,7 +146,7 @@ ${verbEd2} ${adverb} into the darkness. It was a night nobody would ever forget!
       resultSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // "Last updated" footer
+    // Last updated footer
     var x = document.lastModified;
     document.getElementById('lastModified').textContent = x;
   </script>
