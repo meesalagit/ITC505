@@ -1,16 +1,9 @@
-<h1>Mad Lib Form Page Placeholder</h1>
-``` :contentReference[oaicite:0]{index=0}  
-
-You should replace the **entire** file with this final version:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Lab 7: Mad Lib</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- style.css is in the same folder as this file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,7 +17,6 @@ You should replace the **entire** file with this final version:
       <section class="madlib-card">
         <h3 class="madlib-title">A Fun Story Ad-Lib</h3>
 
-        <!-- IMPORTANT: POST to /ITC505/lab-7 (same URL the server handles) -->
         <form id="madLibForm" action="/ITC505/lab-7" method="POST">
           <table class="madlib-table">
             <tr>
@@ -88,7 +80,6 @@ You should replace the **entire** file with this final version:
       </section>
     </main>
 
-    <!-- REQUIRED FOOTER + SCRIPT -->
     <footer>
       <p>Last updated:
         <span id="lastModified"></span>
@@ -96,13 +87,12 @@ You should replace the **entire** file with this final version:
     </footer>
   </div>
 
-  <!-- Front-end validation + lastModified -->
   <script>
+    // Front-end validation & footer update
     const form = document.getElementById('madLibForm');
     form.addEventListener('submit', function (e) {
       const inputs = form.querySelectorAll('input[type="text"]');
       let valid = true;
-
       inputs.forEach(input => {
         if (!input.value.trim()) {
           valid = false;
@@ -111,15 +101,16 @@ You should replace the **entire** file with this final version:
           input.classList.remove('error');
         }
       });
-
       if (!valid) {
         e.preventDefault();
         alert('Please fill in all fields before clicking "Go Mad!".');
       }
     });
 
+    // "Last updated" footer
     var x = document.lastModified;
     document.getElementById('lastModified').textContent = x;
   </script>
 </body>
 </html>
+
