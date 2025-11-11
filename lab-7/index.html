@@ -18,7 +18,7 @@
       <section class="madlib-card">
         <h3 class="madlib-title">A Fun Story Ad-Lib</h3>
 
-        <!-- NO action/method -> JS handles everything on same page -->
+        <!-- NOTE: no action, no method, no submit -->
         <form id="madLibForm">
           <table class="madlib-table">
             <tr>
@@ -76,7 +76,8 @@
           </table>
 
           <div class="button-row">
-            <button type="submit" class="go-button">Go Mad!</button>
+            <!-- type="button" so it NEVER submits the form -->
+            <button type="button" id="goButton" class="go-button">Go Mad!</button>
           </div>
         </form>
       </section>
@@ -97,16 +98,15 @@
 
   <script>
     const form = document.getElementById('madLibForm');
+    const goButton = document.getElementById('goButton');
     const resultSection = document.getElementById('resultSection');
     const storyBox = document.getElementById('storyBox');
 
-    form.addEventListener('submit', function (e) {
-      // Stay on same page
-      e.preventDefault();
-
+    goButton.addEventListener('click', function () {
       const inputs = form.querySelectorAll('input[type="text"]');
       let valid = true;
 
+      // validation
       inputs.forEach(input => {
         if (!input.value.trim()) {
           valid = false;
@@ -121,6 +121,7 @@
         return;
       }
 
+      // Get values
       const animal      = document.getElementById('animal').value.trim();
       const noun1       = document.getElementById('noun1').value.trim();
       const place       = document.getElementById('place').value.trim();
@@ -135,6 +136,7 @@
       const verbEd2     = document.getElementById('verbEd2').value.trim();
       const adverb      = document.getElementById('adverb').value.trim();
 
+      // Build story
       let story = `
 One night, a ${animal} and a ${noun1} were walking through ${place}.
 Suddenly, a group of ${pluralNoun} appeared, looking very ${adjective1}.
@@ -148,6 +150,7 @@ ${verbEd2} ${adverb} into the darkness. It was a night nobody would ever forget!
       resultSection.scrollIntoView({ behavior: 'smooth' });
     });
 
+    // "Last updated" footer
     var x = document.lastModified;
     document.getElementById('lastModified').textContent = x;
   </script>
