@@ -1,0 +1,125 @@
+<h1>Mad Lib Form Page Placeholder</h1>
+``` :contentReference[oaicite:0]{index=0}  
+
+You should replace the **entire** file with this final version:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab 7: Mad Lib</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- style.css is in the same folder as this file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <h1>Mad Libs</h1>
+      <h2>A Custom Story Ad-Lib</h2>
+    </header>
+
+    <main>
+      <section class="madlib-card">
+        <h3 class="madlib-title">A Fun Story Ad-Lib</h3>
+
+        <!-- IMPORTANT: POST to /ITC505/lab-7 (same URL the server handles) -->
+        <form id="madLibForm" action="/ITC505/lab-7" method="POST">
+          <table class="madlib-table">
+            <tr>
+              <td class="label-cell"><label for="animal">ANIMAL</label></td>
+              <td><input type="text" id="animal" name="animal" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="noun1">NOUN</label></td>
+              <td><input type="text" id="noun1" name="noun1" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="place">PLACE</label></td>
+              <td><input type="text" id="place" name="place" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="pluralNoun">NOUN (PLURAL)</label></td>
+              <td><input type="text" id="pluralNoun" name="pluralNoun" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="adjective1">ADJECTIVE</label></td>
+              <td><input type="text" id="adjective1" name="adjective1" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="bodyPart">BODY PART</label></td>
+              <td><input type="text" id="bodyPart" name="bodyPart" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="noun2">NOUN</label></td>
+              <td><input type="text" id="noun2" name="noun2" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="noun3">NOUN</label></td>
+              <td><input type="text" id="noun3" name="noun3" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="verbEd1">VERB ENDING IN "ED"</label></td>
+              <td><input type="text" id="verbEd1" name="verbEd1" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="adjective2">ADJECTIVE</label></td>
+              <td><input type="text" id="adjective2" name="adjective2" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="noun4">NOUN</label></td>
+              <td><input type="text" id="noun4" name="noun4" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="verbEd2">VERB ENDING IN "ED"</label></td>
+              <td><input type="text" id="verbEd2" name="verbEd2" required></td>
+            </tr>
+            <tr>
+              <td class="label-cell"><label for="adverb">ADVERB</label></td>
+              <td><input type="text" id="adverb" name="adverb" required></td>
+            </tr>
+          </table>
+
+          <div class="button-row">
+            <button type="submit" class="go-button">Go Mad!</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- REQUIRED FOOTER + SCRIPT -->
+    <footer>
+      <p>Last updated:
+        <span id="lastModified"></span>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Front-end validation + lastModified -->
+  <script>
+    const form = document.getElementById('madLibForm');
+    form.addEventListener('submit', function (e) {
+      const inputs = form.querySelectorAll('input[type="text"]');
+      let valid = true;
+
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          valid = false;
+          input.classList.add('error');
+        } else {
+          input.classList.remove('error');
+        }
+      });
+
+      if (!valid) {
+        e.preventDefault();
+        alert('Please fill in all fields before clicking "Go Mad!".');
+      }
+    });
+
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+</body>
+</html>
