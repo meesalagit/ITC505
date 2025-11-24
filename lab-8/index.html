@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Registration Form - Lab 8</title>
+    <script src="script.js"></script>
+    <style>
+        body { 
+            font-family: Arial; 
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Secure Registration Form</h2>
+
+    <form id="regForm" onsubmit="return validateForm()">
+        <label>First Name:</label>
+        <input type="text" id="fname">
+
+        <label>Last Name:</label>
+        <input type="text" id="lname">
+
+        <label>Email:</label>
+        <input type="email" id="email">
+
+        <label>Password:</label>
+        <input type="password" id="password">
+
+        <label>Confirm Password:</label>
+        <input type="password" id="cpassword">
+
+        <p class="error" id="error"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
