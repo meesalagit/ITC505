@@ -9,13 +9,19 @@
     <main>
         <h1>Lights Out</h1>
 
-        <section id="instructions">
-            <p>
-                Click a tile to toggle it and its immediate neighbors (up, down, left, right).
-                Your goal is to turn <strong>all the lights off</strong>. When every tile is off,
-                you win the game!
-            </p>
-        </section>
+        <p class="subtitle">
+            Click a tile to toggle it and its neighbors. Turn all the lights off to win!
+        </p>
+
+        <!-- Info bar = embellishment (moves + status) -->
+        <div class="info-bar">
+            <div class="info-item">
+                Moves: <span id="moveCount">0</span>
+            </div>
+            <div class="info-item status" id="statusMessage">
+                Good luck!
+            </div>
+        </div>
 
         <section id="game-wrapper">
             <div id="board" class="board" aria-label="Lights Out game board"></div>
