@@ -13,13 +13,13 @@
             Click a tile to toggle it and its neighbors. Turn all the lights off to win!
         </p>
 
-        <!-- Info bar = embellishment (moves + status) -->
+        <!-- Info bar (embellishment: moves + status) -->
         <div class="info-bar">
             <div class="info-item">
                 Moves: <span id="moveCount">0</span>
             </div>
             <div class="info-item status" id="statusMessage">
-                Good luck!
+                New puzzle! Turn all the lights off.
             </div>
         </div>
 
@@ -32,10 +32,11 @@
 
     <!-- Required footer snippet (must be before </body>) -->
     <footer>
-        <p>Last updated:
+        <p>Last updated: 
             <span id="lastModified"></span>
         </p>
     </footer>
+
     <script type="text/javascript">
         var x = document.lastModified;
         document.getElementById('lastModified').textContent = x;
