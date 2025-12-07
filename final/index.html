@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lights Out – Final Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Lights Out</h1>
+
+        <section id="instructions">
+            <p>
+                Click a tile to toggle it and its immediate neighbors (up, down, left, right).
+                Your goal is to turn <strong>all the lights off</strong>. When every tile is off,
+                you win the game!
+            </p>
+        </section>
+
+        <section id="game-wrapper">
+            <div id="board" class="board" aria-label="Lights Out game board"></div>
+        </section>
+
+        <button id="newGameBtn" type="button">New Random Game</button>
+    </main>
+
+    <!-- Required footer snippet (must be before </body>) -->
+    <footer>
+        <p>Last updated:
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script type="text/javascript">
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
