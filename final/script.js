@@ -117,7 +117,7 @@ function createNewRandomGame() {
     updateAllCellsFromState();
 
     // Apply random moves
-    const randomMoves = BOARD_SIZE * BOARD_SIZE * 2; // somewhat arbitrary, but scrambles nicely
+    const randomMoves = BOARD_SIZE * BOARD_SIZE * 2; // scrambles nicely
     for (let i = 0; i < randomMoves; i++) {
         const r = Math.floor(Math.random() * BOARD_SIZE);
         const c = Math.floor(Math.random() * BOARD_SIZE);
