@@ -1,7 +1,8 @@
-// Lights Out – JavaScript logic
+// Lights Out – JavaScript logic with embellishments
 
 const BOARD_SIZE = 5; // 5x5 grid
 let boardState = [];  // 2D array of booleans: true = light ON, false = OFF
+let moveCount = 0;
 
 // Initialize everything when the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
@@ -50,7 +51,14 @@ function handleCellClick(event) {
 
     toggleCellAndNeighbors(row, col);
 
+    // embellishment: count moves
+    moveCount++;
+    updateMoveCount();
+    clearStatusWin();
+
     if (checkWin()) {
+        setWinStatus();
+
         // small timeout so the visual state finishes updating
         setTimeout(() => {
             window.alert("You win!");
@@ -122,6 +130,15 @@ function createNewRandomGame() {
         const c = Math.floor(Math.random() * BOARD_SIZE);
         toggleCellAndNeighbors(r, c);
     }
+
+    // Reset embellishment info
+    moveCount = 0;
+    updateMoveCount();
+    const statusEl = document.getElementById("statusMessage");
+    if (statusEl) {
+        statusEl.textContent = "New puzzle! Turn all the lights off.";
+        statusEl.classList.remove("status-win");
+    }
 }
 
 /**
@@ -156,4 +173,30 @@ function checkWin() {
         }
     }
     return true;
+}
+
+/**
+ * Embellishment helpers: move counter + status display
+ */
+function updateMoveCount() {
+    const el = document.getElementById("moveCount");
+    if (el) {
+        el.textContent = moveCount.toString();
+    }
+}
+
+function setWinStatus() {
+    const statusEl = document.getElementById("statusMessage");
+    if (statusEl) {
+        statusEl.textContent = "You win! 🎉";
+        statusEl.classList.add("status-win");
+    }
+}
+
+function clearStatusWin() {
+    const statusEl = document.getElementById("statusMessage");
+    if (statusEl && statusEl.classList.contains("status-win")) {
+        statusEl.textContent = "Keep going…";
+        statusEl.classList.remove("status-win");
+    }
 }
