@@ -13,65 +13,68 @@
             Click a tile to toggle it and its neighbors. Turn all the lights off to win!
         </p>
 
-        <!-- Info bar (embellishment: moves + status) -->
-        <div class="info-bar">
-            <div class="info-item">
-                Moves: <span id="moveCount">0</span>
-            </div>
-            <div class="info-item status" id="statusMessage">
-                New puzzle! Turn all the lights off.
-            </div>
+        <div class="game-layout">
+            <!-- LEFT: GAME -->
+            <section class="left-panel">
+                <div class="info-bar">
+                    <div class="info-item">
+                        Moves: <span id="moveCount">0</span>
+                    </div>
+                    <div class="info-item status" id="statusMessage">
+                        New puzzle! Turn all the lights off.
+                    </div>
+                </div>
+
+                <div id="game-wrapper">
+                    <div id="board" class="board" aria-label="Lights Out game board"></div>
+                </div>
+
+                <button id="newGameBtn" type="button">New Random Game</button>
+            </section>
+
+            <!-- RIGHT: HOW TO PLAY / HINT / FONT NOTES -->
+            <section class="right-panel">
+                <div class="info-block">
+                    <h2>How to Play</h2>
+                    <ol>
+                        <li>Click any tile on the board.</li>
+                        <li>The clicked tile and its up, down, left, and right neighbors toggle.</li>
+                        <li>Yellow = ON, dark = OFF.</li>
+                        <li>Goal: make all tiles OFF.</li>
+                        <li>When all lights are off, a pop-up says <strong>"You win!"</strong>.</li>
+                    </ol>
+                </div>
+
+                <div class="info-block">
+                    <h2>Hint (Random & Solvable)</h2>
+                    <p>
+                        The board does not start with totally random lights, because some random
+                        patterns in Lights Out cannot be solved. This game starts from an all-off
+                        board and applies random simulated clicks using the same rules as the
+                        player. Any board created this way is guaranteed to be solvable.
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h2>Font Notes</h2>
+                    <p>
+                        To meet the “font craziness” requirement, this page uses Google Fonts:
+                        <strong>Press Start 2P</strong> for the title and <strong>Orbitron</strong>
+                        for the rest of the text. They are loaded with an <code>@import</code> at
+                        the top of <code>styles.css</code>:
+                    </p>
+                    <p class="code-snippet">
+                        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Orbitron:wght@500&amp;display=swap');
+                    </p>
+                    <p>
+                        When the page loads, the browser downloads these fonts from Google and
+                        applies them to the elements styled in the CSS.
+                    </p>
+                </div>
+            </section>
         </div>
 
-        <section id="game-wrapper">
-            <div id="board" class="board" aria-label="Lights Out game board"></div>
-        </section>
-
-        <button id="newGameBtn" type="button">New Random Game</button>
-
-        <!-- How to Play / Hint / Font Notes -->
-        <section class="info-sections">
-            <div class="info-block">
-                <h2>How to Play</h2>
-                <ol>
-                    <li>Click any tile on the board.</li>
-                    <li>The clicked tile and its up, down, left, and right neighbors will toggle.</li>
-                    <li>Yellow tiles are ON, dark tiles are OFF.</li>
-                    <li>Your goal is to make <strong>all</strong> tiles turn OFF.</li>
-                    <li>When every tile is off, a pop-up will say <strong>"You win!"</strong>.</li>
-                </ol>
-            </div>
-
-            <div class="info-block">
-                <h2>Hint – Random but Solvable Board</h2>
-                <p>
-                    The puzzle does not start with a completely random pattern, because some random
-                    boards in Lights Out are impossible to solve. Instead, the game begins from an
-                    all-off board and the program simulates a series of random valid clicks using
-                    the same rules as the player. Any board created this way can always be solved,
-                    so each new game is both random and solvable.
-                </p>
-            </div>
-
-            <div class="info-block">
-                <h2>Font Notes</h2>
-                <p>
-                    To satisfy the “font craziness” requirement, this page uses Google Fonts,
-                    including <strong>Press Start 2P</strong> for the retro title and
-                    <strong>Orbitron</strong> for the rest of the text. The fonts are loaded using
-                    an <code>@import</code> statement at the top of <code>styles.css</code>:
-                </p>
-                <p class="code-snippet">
-                    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@500&display=swap');
-                </p>
-                <p>
-                    When the page loads, the browser downloads these fonts from Google’s servers
-                    and applies them to the elements styled in the CSS rules.
-                </p>
-            </div>
-        </section>
-
-        <!-- Short Addendum section on the page -->
+        <!-- BOTTOM: ADDENDUM -->
         <section class="addendum">
             <h2>Project Addendum</h2>
             <p>
