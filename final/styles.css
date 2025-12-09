@@ -20,6 +20,7 @@ body {
 main {
     text-align: center;
     padding: 1.5rem;
+    max-width: 1000px;
 }
 
 /* “Crazy” retro title font */
@@ -118,6 +119,44 @@ h1 {
     transform: translateY(-1px);
 }
 
+/* Info sections (How to Play / Hint / Font Notes) */
+.info-sections {
+    margin: 2rem auto 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.info-block {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(0, 246, 255, 0.18);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.info-block h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 6px #00f6ff;
+}
+
+.info-block ol {
+    padding-left: 1.2rem;
+}
+
+.code-snippet {
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    margin: 0.4rem 0;
+}
+
 /* Addendum styling */
 .addendum {
     max-width: 700px;
@@ -136,14 +175,3 @@ h1 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     text-shadow: 0 0 8px #00f6ff;
-}
-
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.75rem;
-    opacity: 0.75;
-}
