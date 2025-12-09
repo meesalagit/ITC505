@@ -29,6 +29,48 @@
 
         <button id="newGameBtn" type="button">New Random Game</button>
 
+        <!-- How to Play / Hint / Font Notes -->
+        <section class="info-sections">
+            <div class="info-block">
+                <h2>How to Play</h2>
+                <ol>
+                    <li>Click any tile on the board.</li>
+                    <li>The clicked tile and its up, down, left, and right neighbors will toggle.</li>
+                    <li>Yellow tiles are ON, dark tiles are OFF.</li>
+                    <li>Your goal is to make <strong>all</strong> tiles turn OFF.</li>
+                    <li>When every tile is off, a pop-up will say <strong>"You win!"</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="info-block">
+                <h2>Hint – Random but Solvable Board</h2>
+                <p>
+                    The puzzle does not start with a completely random pattern, because some random
+                    boards in Lights Out are impossible to solve. Instead, the game begins from an
+                    all-off board and the program simulates a series of random valid clicks using
+                    the same rules as the player. Any board created this way can always be solved,
+                    so each new game is both random and solvable.
+                </p>
+            </div>
+
+            <div class="info-block">
+                <h2>Font Notes</h2>
+                <p>
+                    To satisfy the “font craziness” requirement, this page uses Google Fonts,
+                    including <strong>Press Start 2P</strong> for the retro title and
+                    <strong>Orbitron</strong> for the rest of the text. The fonts are loaded using
+                    an <code>@import</code> statement at the top of <code>styles.css</code>:
+                </p>
+                <p class="code-snippet">
+                    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@500&display=swap');
+                </p>
+                <p>
+                    When the page loads, the browser downloads these fonts from Google’s servers
+                    and applies them to the elements styled in the CSS rules.
+                </p>
+            </div>
+        </section>
+
         <!-- Short Addendum section on the page -->
         <section class="addendum">
             <h2>Project Addendum</h2>
