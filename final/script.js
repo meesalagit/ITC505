@@ -1,37 +1,32 @@
 // Lights Out – JavaScript logic with embellishments
 
 const BOARD_SIZE = 5; // 5x5 grid
-let boardState = [];  // 2D array of booleans: true = light ON, false = OFF
+let boardState = [];  // 2D array: true = ON, false = OFF
 let moveCount = 0;
 
-// Initialize everything when the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
     const newGameBtn = document.getElementById("newGameBtn");
     newGameBtn.addEventListener("click", createNewRandomGame);
 
     createBoard();
-    createNewRandomGame(); // start with a random, solvable board
+    createNewRandomGame();
 });
 
-/**
- * Create the DOM elements for the board and set up the boardState array.
- */
 function createBoard() {
     const board = document.getElementById("board");
-    board.innerHTML = ""; // clear any existing cells
+    board.innerHTML = "";
     boardState = [];
 
     for (let row = 0; row < BOARD_SIZE; row++) {
         const rowArray = [];
         for (let col = 0; col < BOARD_SIZE; col++) {
-            rowArray.push(false); // all OFF to start
+            rowArray.push(false);
 
             const cell = document.createElement("div");
             cell.classList.add("cell");
             cell.dataset.row = row;
             cell.dataset.col = col;
 
-            // Click handler for each cell
             cell.addEventListener("click", handleCellClick);
 
             board.appendChild(cell);
@@ -40,10 +35,6 @@ function createBoard() {
     }
 }
 
-/**
- * Handle a click from the user on a cell.
- * Toggling that cell and its neighbors is one "move".
- */
 function handleCellClick(event) {
     const cell = event.currentTarget;
     const row = parseInt(cell.dataset.row, 10);
@@ -51,24 +42,18 @@ function handleCellClick(event) {
 
     toggleCellAndNeighbors(row, col);
 
-    // embellishment: count moves
     moveCount++;
     updateMoveCount();
     clearStatusWin();
 
     if (checkWin()) {
         setWinStatus();
-
-        // small timeout so the visual state finishes updating
         setTimeout(() => {
             window.alert("You win!");
         }, 10);
     }
 }
 
-/**
- * Toggle the clicked cell and its up/down/left/right neighbors.
- */
 function toggleCellAndNeighbors(row, col) {
     toggleCell(row, col);
     toggleCell(row - 1, col); // up
@@ -77,13 +62,8 @@ function toggleCellAndNeighbors(row, col) {
     toggleCell(row, col + 1); // right
 }
 
-/**
- * Toggle a single cell's boolean state and update its CSS class.
- */
 function toggleCell(row, col) {
-    if (row < 0 || row >= BOARD_SIZE || col < 0 || col >= BOARD_SIZE) {
-        return; // out of bounds
-    }
+    if (row < 0 || row >= BOARD_SIZE || col < 0 || col >= BOARD_SIZE) return;
 
     boardState[row][col] = !boardState[row][col];
 
@@ -98,17 +78,8 @@ function toggleCell(row, col) {
     }
 }
 
-/**
- * Create a new random but solvable game state.
- *
- * Strategy:
- *  1. Start from the solved board (all lights OFF).
- *  2. Simulate a bunch of random valid clicks using the same rules
- *     as the player. Any configuration you can reach this way is,
- *     by definition, solvable.
- */
 function createNewRandomGame() {
-    // Reset to all OFF
+    // reset to all OFF
     for (let row = 0; row < BOARD_SIZE; row++) {
         for (let col = 0; col < BOARD_SIZE; col++) {
             boardState[row][col] = false;
@@ -116,22 +87,21 @@ function createNewRandomGame() {
     }
     updateAllCellsFromState();
 
-    // Apply random moves
-    const randomMoves = BOARD_SIZE * BOARD_SIZE * 2; // scrambles nicely
+    // scramble via random valid moves (always solvable)
+    const randomMoves = BOARD_SIZE * BOARD_SIZE * 2;
     for (let i = 0; i < randomMoves; i++) {
         const r = Math.floor(Math.random() * BOARD_SIZE);
         const c = Math.floor(Math.random() * BOARD_SIZE);
         toggleCellAndNeighbors(r, c);
     }
 
-    // Edge case: if it ended up already solved, scramble again once.
+    // if somehow solved again, scramble once more
     if (checkWin()) {
         const r = Math.floor(Math.random() * BOARD_SIZE);
         const c = Math.floor(Math.random() * BOARD_SIZE);
         toggleCellAndNeighbors(r, c);
     }
 
-    // Reset embellishment info
     moveCount = 0;
     updateMoveCount();
     const statusEl = document.getElementById("statusMessage");
@@ -141,9 +111,6 @@ function createNewRandomGame() {
     }
 }
 
-/**
- * Update the DOM classes to match the current boardState array.
- */
 function updateAllCellsFromState() {
     for (let row = 0; row < BOARD_SIZE; row++) {
         for (let col = 0; col < BOARD_SIZE; col++) {
@@ -160,29 +127,19 @@ function updateAllCellsFromState() {
     }
 }
 
-/**
- * Check if the puzzle is solved.
- * In this version, the puzzle is solved when ALL lights are OFF (false).
- */
 function checkWin() {
     for (let row = 0; row < BOARD_SIZE; row++) {
         for (let col = 0; col < BOARD_SIZE; col++) {
-            if (boardState[row][col]) {
-                return false; // some light still ON
-            }
+            if (boardState[row][col]) return false;
         }
     }
     return true;
 }
 
-/**
- * Embellishment helpers: move counter + status display
- */
+/* embellishment helpers */
 function updateMoveCount() {
     const el = document.getElementById("moveCount");
-    if (el) {
-        el.textContent = moveCount.toString();
-    }
+    if (el) el.textContent = moveCount.toString();
 }
 
 function setWinStatus() {
