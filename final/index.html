@@ -10,10 +10,10 @@
         <h1>REVENGE OF LIGHTS OUT</h1>
 
         <p class="subtitle">
-            Click a square to toggle it and its immediate neighbors. Your goal is to
-            turn all the lights off.
+            Click a square to toggle it and its immediate neighbors. Your goal is to turn all the lights off.
         </p>
 
+        <!-- LEFT + RIGHT PANELS -->
         <div class="game-layout">
             <!-- LEFT: GAME -->
             <section class="left-panel">
@@ -33,66 +33,66 @@
                 <button id="newGameBtn" type="button">New Random Game</button>
             </section>
 
-            <!-- RIGHT: HOW TO PLAY / HINT / FONT NOTES (shorter) -->
+            <!-- RIGHT: HOW TO PLAY + HINT + FONT NOTES -->
             <section class="right-panel">
                 <h2>HOW TO PLAY</h2>
 
                 <p>
-                    <strong>Objective:</strong> Turn all the lights off. A light is
-                    considered “off” when the square is completely dark.
+                    <strong>Objective:</strong> Turn all the lights off. A light is considered “off”
+                    when the square is completely dark.
                 </p>
 
                 <p>
-                    <strong>Basic play:</strong> Clicking a square toggles that square
-                    and its up, down, left, and right neighbors. Each page refresh or
-                    clicking <em>New Random Game</em> creates a new solvable puzzle.
+                    <strong>Basic play:</strong> Clicking a square toggles that square and its
+                    up, down, left, and right neighbors. Yellow tiles are ON, dark tiles are OFF.
+                    When every tile is dark, a pop-up will say <strong>“You win!”</strong>.
                 </p>
 
                 <p>
-                    <strong>Hint:</strong> The starting board is not purely random.
-                    The game begins from an all-off board and then applies random valid
-                    moves. Because these are legal game moves, the final pattern you see
-                    is always solvable.
+                    <strong>Hint:</strong> The board you see is not purely random. The game starts
+                    from an all-off board and then applies random valid moves using the same rules
+                    as the player. Because these are legal moves, the final pattern is always
+                    solvable.
                 </p>
 
                 <p>
                     <strong>Font notes:</strong> This page uses the retro arcade font
-                    <em>Press Start 2P</em> for headings and a clean sans-serif font for
-                    body text. Both fonts are loaded from Google Fonts using a CSS
-                    <code>@import</code> rule at the top of <code>styles.css</code>,
-                    which creates the “font craziness” required for the assignment.
-                    The exact URL is handled in the CSS and is not shown to the user.
+                    <em>Press Start 2P</em> for the title and a clean sans-serif font for the body
+                    text. Both fonts are loaded from Google Fonts using a CSS
+                    <code>@import</code> rule at the top of <code>styles.css</code>, which creates
+                    the intentional “font craziness” required by the assignment without showing the
+                    full URL to the user.
                 </p>
             </section>
         </div>
 
-        <!-- BOTTOM: ADDENDUM -->
+        <!-- BOTTOM: ADDENDUM ONLY -->
         <section class="addendum">
             <h2>Project Addendum</h2>
             <p>
-                This project implements a playable Lights Out game using HTML, CSS, and
-                JavaScript. The board is generated dynamically, and each tile toggles
-                itself and its neighbors when clicked. To ensure the game is solvable, I
-                began with an all-off board and applied random simulated clicks, which
-                guarantees a valid configuration.
+                This project implements a playable Lights Out game using HTML, CSS, and JavaScript.
+                The board is generated dynamically, and each tile toggles itself and its neighbors
+                when clicked. To ensure the game is solvable, I began with an all-off board and
+                applied random simulated clicks, which guarantees a valid configuration created by
+                real game moves.
             </p>
             <p>
-                The game shows the required "You win!" alert when all lights are off.
-                I added small embellishments such as a move counter and a status message
-                to make the gameplay feel more interactive. I also used Google Fonts to
-                satisfy the font requirement and included the footer script to display
-                the last modified time.
+                The game shows the required "You win!" alert when all lights are off. I added small
+                embellishments such as a move counter and a status message to make the gameplay feel
+                more interactive. I also used Google Fonts to satisfy the font requirement and
+                included the footer script to display the last modified time of the page.
             </p>
             <p>
-                This project helped me practice DOM manipulation, event handling, styling,
-                and deploying a webpage through GitHub Pages.
+                This project helped me practice DOM manipulation, event handling, styling with CSS,
+                and deploying a webpage through GitHub Pages while debugging issues like caching and
+                file-path problems.
             </p>
         </section>
     </main>
 
     <!-- Required footer snippet (must be before </body>) -->
     <footer>
-        <p>Last updated: 
+        <p>Last updated:
             <span id="lastModified"></span>
         </p>
     </footer>
